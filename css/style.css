@@ -392,6 +392,410 @@ main {
   justify-content: center;
 }
 
+/* =========================================================
+   PÁGINA PERSONAGENS / THE FAMILY
+========================================================= */
+
+.characters-main {
+    width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(229, 9, 20, 0.10), transparent 32%),
+        linear-gradient(180deg, #111515 0%, #0c0f0f 100%);
+}
+
+/* TÍTULO DA PÁGINA */
+
+.characters-section {
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
+.characters-title {
+    margin-bottom: 56px;
+}
+
+.characters-title h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 5.8rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+    text-shadow:
+        4px 4px 0 rgba(229, 9, 20, 0.95),
+        8px 8px 0 rgba(0, 0, 0, 0.65);
+}
+
+.characters-title h1 span {
+    color: var(--primary-container);
+}
+
+.characters-title p {
+    max-width: 780px;
+    margin: 18px auto 0;
+    color: var(--on-surface-variant);
+    font-size: clamp(1rem, 1.6vw, 1.16rem);
+    line-height: 1.7;
+}
+
+/* INTRODUÇÃO */
+
+.characters-intro {
+    margin-bottom: 72px;
+}
+
+.characters-highlight {
+    display: grid;
+    grid-template-columns: minmax(280px, 460px) 1fr;
+    gap: 36px;
+    align-items: center;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(135deg, rgba(229, 9, 20, 0.12), transparent 38%),
+        rgba(255, 255, 255, 0.035);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+}
+
+.characters-highlight .car-image {
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #050707;
+}
+
+.characters-highlight .car-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.85) contrast(1.08) saturate(1.05);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.characters-highlight:hover .car-image img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.12) saturate(1.15);
+}
+
+.characters-highlight h2 {
+    margin-bottom: 18px;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+}
+
+.characters-highlight p {
+    color: var(--on-surface-variant);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.characters-highlight p + p {
+    margin-top: 14px;
+}
+
+/* TÍTULO DE SEÇÃO */
+
+.section-heading {
+    margin-bottom: 28px;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3.5vw, 3rem);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+}
+
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 86px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--primary-color);
+    box-shadow: 0 0 18px rgba(229, 9, 20, 0.75);
+}
+
+/* GRID DOS PERSONAGENS */
+
+.characters-grid-section {
+    margin-bottom: 86px;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* CARD */
+
+.character-card {
+    position: relative;
+    min-height: 410px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #050707;
+    isolation: isolate;
+    cursor: pointer;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+}
+
+.character-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 2;
+    height: 62%;
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.58) 36%,
+            rgba(0, 0, 0, 0.98) 100%
+        );
+    pointer-events: none;
+}
+
+.character-image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 410px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.72) contrast(1.08) saturate(0.95);
+    transform: scale(1.02);
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.character-content {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+    z-index: 5;
+}
+
+.character-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 6px 9px;
+    border: 1px solid var(--primary-color);
+    background: rgba(10, 13, 13, 0.82);
+    color: var(--primary-container);
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.character-content h3 {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    color: #ffffff;
+    font-size: clamp(1.35rem, 2vw, 1.72rem);
+    line-height: 1;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.85);
+}
+
+.character-content p {
+    margin: 0;
+    color: var(--on-surface-variant);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* HOVER DOS CARDS */
+
+.character-card:hover::before {
+    border-color: rgba(229, 9, 20, 0.72);
+    box-shadow: inset 0 0 28px rgba(229, 9, 20, 0.12);
+}
+
+.character-card:hover .character-image img {
+    transform: scale(1.09);
+    filter: brightness(0.92) contrast(1.12) saturate(1.12);
+}
+
+.character-card:hover .character-tag {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/* SEÇÃO FINAL */
+
+.characters-family-section {
+    padding: 42px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.characters-family-section h2 {
+    margin-bottom: 28px;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+}
+
+.characters-family-section h2::after {
+    content: "";
+    display: block;
+    width: 86px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--primary-color);
+    box-shadow: 0 0 18px rgba(229, 9, 20, 0.75);
+}
+
+.characters-family-section .secrets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+
+.characters-family-section .secrets-grid li {
+    padding: 30px;
+    border-left: 3px solid var(--primary-color);
+    background:
+        linear-gradient(135deg, rgba(229, 9, 20, 0.12), transparent 45%),
+        rgba(255, 255, 255, 0.035);
+    color: var(--on-surface-variant);
+    line-height: 1.65;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+}
+
+.characters-family-section .secrets-grid li::before {
+    display: none;
+}
+
+.characters-family-section .secrets-grid strong {
+    color: var(--primary-container);
+    text-transform: uppercase;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1180px) {
+    .characters-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .characters-family-section .secrets-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .characters-highlight {
+        grid-template-columns: 1fr;
+    }
+
+    .characters-highlight .car-image {
+        min-height: 280px;
+    }
+
+    .characters-highlight .car-image img {
+        min-height: 280px;
+    }
+
+    .characters-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .character-card {
+        min-height: 390px;
+    }
+
+    .character-image img {
+        min-height: 390px;
+    }
+}
+
+@media (max-width: 640px) {
+    .characters-section {
+        padding-top: 24px;
+        padding-bottom: 80px;
+    }
+
+    .characters-title {
+        margin-bottom: 38px;
+    }
+
+    .characters-title h1 {
+        text-shadow:
+            3px 3px 0 rgba(229, 9, 20, 0.95),
+            6px 6px 0 rgba(0, 0, 0, 0.65);
+    }
+
+    .characters-highlight {
+        padding: 18px;
+        gap: 24px;
+    }
+
+    .characters-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .character-card {
+        min-height: 440px;
+    }
+
+    .character-image img {
+        min-height: 440px;
+    }
+
+    .character-content {
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+    }
+
+    .characters-family-section .secrets-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 /* ==========================================================================
@@ -532,8 +936,6 @@ main {
 /* ==========================================================================
    Estilo curiosidades.hmtl
    ========================================================================== */
-
-
 .page-title {
     width: 100%;
     padding: 40px 0 32px;
@@ -546,7 +948,6 @@ main {
 
     text-align: center;
 
-
     background:
         linear-gradient(
             180deg,
@@ -556,205 +957,233 @@ main {
 }
 
 .page-title h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  font-weight: 900;
-  font-style: italic;
-  text-transform: uppercase;
-  color: var(--on-bg-color);
-  margin-bottom: var(--spacing-sm);
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+    margin-bottom: var(--spacing-sm);
 }
 
 .page-title h1 span {
-  color: var(--primary-container);
+    color: var(--primary-container);
 }
 
 .page-title p {
-  max-width: 760px;
-  color: var(--on-surface-variant);
-  font-size: 18px;
-  line-height: 1.7;
+    max-width: 760px;
+    color: var(--on-surface-variant);
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 .curiosities-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-lg);
-  margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: 70px;
 }
 
 .curiosity-card {
-  border: 1px solid var(--outline-variant);
-  border-radius: var(--radius-lg);
-  background: var(--surface-container-lowest);
-  padding: 28px;
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-lg);
+    background: var(--surface-container-lowest);
+    padding: 28px;
 }
 
 .curiosity-card.wide {
-  display: grid;
-  grid-template-columns: 42% 1fr;
-  gap: var(--spacing-lg);
-  align-items: center;
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
 }
 
 .curiosity-card h2,
 .secrets-section h2 {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-style: italic;
-  text-transform: uppercase;
-  color: var(--on-bg-color);
-  margin-bottom: var(--spacing-md);
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+    margin-bottom: var(--spacing-md);
 }
 
 .curiosity-card p {
-  color: var(--on-surface-variant);
-  margin-bottom: 18px;
-  line-height: 1.7;
+    color: var(--on-surface-variant);
+    margin-bottom: 18px;
+    line-height: 1.7;
 }
 
 .curiosity-card strong,
-.secrets-grid strong {
-  color: var(--on-bg-color);
+.secrets-grid strong,
+.evolution-list strong {
+    color: var(--on-bg-color);
+}
+
+.evolution-list {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.evolution-list li {
+    color: var(--on-surface-variant);
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.evolution-list li:last-child {
+    margin-bottom: 0;
 }
 
 .car-image img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  border-radius: var(--radius-default);
-  display: block;
-  filter: brightness(0.8);
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius-default);
+    display: block;
+    filter: brightness(0.8);
 }
 
 .secrets-section {
-  margin-bottom: 70px;
+    margin-bottom: 70px;
 }
 
 .secrets-section h2 {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .secrets-section h2::after {
-  content: "";
-  height: 2px;
-  flex: 1;
-  background: var(--primary-container);
+    content: "";
+    height: 2px;
+    flex: 1;
+    background: var(--primary-container);
 }
 
 .secrets-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 70px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 70px;
 }
 
-.secrets-grid p {
-  color: var(--on-surface-variant);
-  font-size: 17px;
-  line-height: 1.7;
-  position: relative;
-  padding-left: 24px;
+.secrets-grid li {
+    color: var(--on-surface-variant);
+    font-size: 17px;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 24px;
 }
 
-.secrets-grid p::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--secondary-container);
-  font-size: 22px;
+.secrets-grid li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-container);
+    font-size: 22px;
 }
 
 .iconic-cars {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 35px;
+    list-style: none;
+    padding: 0;
+    margin: 35px 0 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
 }
 
 .iconic-card {
-  background: var(--surface-container-lowest);
-  border: 1px solid var(--outline-variant);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  transition: 0.3s;
+    background: var(--surface-container-lowest);
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: 0.3s;
 }
 
 .iconic-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary-container);
+    transform: translateY(-6px);
+    border-color: var(--primary-container);
 }
 
 .iconic-image {
-  width: 100%;
-  height: 220px;
-  border: 2px solid var(--primary-container);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #171717;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
+    width: 100%;
+    height: 220px;
+    border: 2px solid var(--primary-container);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
 }
 
 .iconic-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .iconic-card h3 {
-  font-family: var(--font-display);
-  font-style: italic;
-  text-transform: uppercase;
-  color: var(--on-bg-color);
-  font-size: 22px;
-  margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--on-bg-color);
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
 .iconic-card p {
-  color: var(--on-surface-variant);
-  line-height: 1.7;
+    color: var(--on-surface-variant);
+    line-height: 1.7;
 }
 
 .curiosities-extra {
-  padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 @media (max-width: 1100px) {
-  .iconic-cars {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .iconic-cars {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 900px) {
-  .curiosities-grid,
-  .curiosity-card.wide,
-  .secrets-grid {
-    grid-template-columns: 1fr;
-  }
+    .curiosities-grid,
+    .curiosity-card.wide,
+    .secrets-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .page-title {
-    margin-bottom: 50px;
-  }
+    .page-title {
+        margin-bottom: 50px;
+    }
 
-  .car-image img {
-    height: 280px;
-  }
+    .car-image img {
+        height: 280px;
+    }
 }
 
 @media (max-width: 700px) {
-  .iconic-cars {
-    grid-template-columns: 1fr;
-  }
+    .iconic-cars {
+        grid-template-columns: 1fr;
+    }
 }
+
 
 
 /* ==========================================================================
    Estilo contato.html
    ========================================================================== */
+
+.contato:hover{
+    color: #fd8b00;
+  }
 
 .contact-main {
   width: 100%;
@@ -937,3 +1366,4 @@ main {
     color: inherit;
     text-decoration: none;
   }
+

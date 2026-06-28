@@ -8,6 +8,9 @@ class FastSagaHeader extends HTMLElement {
     const isHomeActive =
       activeAttr === "home" || pageName === "index.html" || pageName === "";
 
+    const isCharacterActive =
+      activeAttr === "personagem" || pageName === "personagens.html";
+
     const isFilmeActive =
       activeAttr === "movies" || pageName === "filme.html";
 
@@ -38,6 +41,12 @@ class FastSagaHeader extends HTMLElement {
           <li>
             <a href="filme.html" class="nav-link ${isFilmeActive ? "active" : ""}">
               Filmes
+            </a>
+          </li>
+
+          <li>
+            <a href="personagens.html" class="nav-link ${isCharacterActive ? "active" : ""}">
+              Personagens
             </a>
           </li>
 
