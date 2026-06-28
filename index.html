@@ -1,57 +1,151 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAST SAGA - Portal de Fãs</title>
-    <link rel="icon" type="image/png" href="img/favicon.ico">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Tipografia e Ícones -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
+  <title>FAST SAGA - Home</title>
 
-    <!-- Folha de Estilo Customizada -->
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-    <!-- Componentes e Lógica (defer para garantir o carregamento do DOM) -->
-    <script src="js/components.js" defer></script>
-    <script src="js/main.js" defer></script>
-  </head>
-  <body>
-    <!-- Barra de Navegação Componentizada -->
-    <header-navbar></header-navbar>
 
-    <!-- Área Principal de Conteúdo -->
-    <main>
-      <section
-        class="container"
-        style="display: flex; justify-content: center; align-items: center"
-      >
-        <div class="hero-container">
-          <h1 class="hero-title">Hello <span>World</span></h1>
-          <p class="hero-desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
-            cumque impedit error, explicabo dicta id aut fugiat ut quae nesciunt
-            aliquam qui ad debitis voluptatum hic possimus voluptates ipsum
-            culpa?
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/components.js" defer></script>
+</head>
+
+<body>
+  <header-navbar active="home"></header-navbar>
+
+  <main class="home-main">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="container home-hero-wrapper">
+        <div class="home-hero-content">
+          <p class="home-eyebrow">FAST SAGA FAN PROJECT</p>
+
+          <h1 id="home-title" class="home-title">
+            Bem-vindo ao
+            <span>Velozes e Furiosos</span>
+          </h1>
+
+          <p class="home-description">
+            Entre no universo onde carros lendários, corridas de rua, missões impossíveis
+            e laços de família transformaram Velozes e Furiosos em uma das maiores sagas
+            de ação do cinema.
           </p>
-          <div class="hero-meta">
-            <a href="sobre.html" class="btn btn-outline">Conhecer a Equipe</a>
-            <a href="#" class="btn btn-primary">Iniciar Ajustes</a>
+
+          <div class="home-actions">
+            <a href="./filme.html" class="home-btn home-btn-primary">
+              Ver os Filmes
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=DXc8tiB8TBI" class="home-btn home-btn-glass">
+              <span>▶</span>
+              Assistir ao Trailer
+            </a>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- Rodapé Componentizado -->
-    <footer-section></footer-section>
-  </body>
+        <aside class="home-status-card" aria-label="Status da garagem">
+          <div>
+            <span>Status</span>
+            <strong>Motor ligado</strong>
+          </div>
+
+          <div>
+            <span>Nitro</span>
+            <strong>100%</strong>
+          </div>
+
+          <div>
+            <span>Família</span>
+            <strong>Ativa</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    
+
+    <section class="home-quote">
+      <div class="container home-quote-content">
+        <span>“</span>
+        <blockquote>
+          "Velocidade é o começo. Família é o legado."
+        </blockquote>
+        <p>—  DOMINIC TORETTO</p>
+      </div>
+    </section>
+
+    <section class="home-archive" id="arquivo">
+      <div class="container home-archive-grid">
+        <div class="home-archive-content">
+          <p class="home-eyebrow">explore os filmes</p>
+
+          <h2>
+            Tudo sobre a
+            <span>saga</span>
+          </h2>
+
+          <p>
+            Acesse os principais setores do projeto: filmes, personagens, curiosidades,
+            carros marcantes e informações do portal. Uma entrada rápida para navegar
+            pelo universo FAST SAGA.
+          </p>
+
+          <div class="home-archive-links">
+            <a href="./filme.html" class="home-archive-link">
+              <strong>01</strong>
+              <div>
+                <h3>Filmes</h3>
+                <p>Linha do tempo completa da franquia.</p>
+              </div>
+            </a>
+
+            <a href="./personagens.html" class="home-archive-link">
+              <strong>02</strong>
+              <div>
+                <h3>Personagens</h3>
+                <p>Conheça a equipe, aliados e lendas da saga.</p>
+              </div>
+            </a>
+
+            <a href="./curiosidades.html" class="home-archive-link">
+              <strong>03</strong>
+              <div>
+                <h3>Curiosidades</h3>
+                <p>Bastidores, carros icônicos e detalhes escondidos.</p>
+              </div>
+            </a>
+
+            <a href="./contato.html" class="home-archive-link">
+              <strong>04</strong>
+              <div>
+                <h3>Contato</h3>
+                <p>Envie mensagens e conheça os desenvolvedores.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="home-showcase-card">
+          <img src="./img/ff.png" alt="Carros icônicos da saga reunidos" />
+
+          <div class="home-showcase-overlay">
+           <a href="https://www.youtube.com/watch?v=tVSJVSATKOc" class="play-link">
+              <span>▶</span>
+           </a>
+            <h3>Garagem principal</h3>
+            <p>Carros, história e adrenalina em um só lugar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer-section></footer-section>
+</body>
 </html>

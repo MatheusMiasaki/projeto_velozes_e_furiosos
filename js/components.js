@@ -34,7 +34,7 @@ class FastSagaHeader extends HTMLElement {
         <ul class="nav-menu">
           <li>
             <a href="index.html" class="nav-link ${isHomeActive ? "active" : ""}">
-              Galeria
+              Home
             </a>
           </li>
 
