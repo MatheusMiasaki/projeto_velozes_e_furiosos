@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAST SAGA - Portal de Fãs</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+
+    <!-- Tipografia e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Folha de Estilo Customizada -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Componentes e Lógica (defer para garantir o carregamento do DOM) -->
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Barra de Navegação Componentizada -->
+    <header-navbar></header-navbar>
+
+    <!-- Área Principal de Conteúdo -->
+    <main>
+      <section
+        class="container"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <div class="hero-container">
+          <h1 class="hero-title">Hello <span>World</span></h1>
+          <p class="hero-desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
+            cumque impedit error, explicabo dicta id aut fugiat ut quae nesciunt
+            aliquam qui ad debitis voluptatum hic possimus voluptates ipsum
+            culpa?
+          </p>
+          <div class="hero-meta">
+            <a href="sobre.html" class="btn btn-outline">Conhecer a Equipe</a>
+            <a href="#" class="btn btn-primary">Iniciar Ajustes</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé Componentizado -->
+    <footer-section></footer-section>
+  </body>
+</html>

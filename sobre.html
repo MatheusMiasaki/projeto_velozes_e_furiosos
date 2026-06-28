@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAST SAGA - Sobre os Desenvolvedores</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+
+    <!-- Tipografia e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Folha de Estilo Customizada -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Estilos Customizados para a Página Sobre -->
+    <style>
+      .crew-section {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .crew-header {
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .crew-header h2 {
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 800;
+        font-style: italic;
+        text-transform: uppercase;
+        color: var(--on-bg-color);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .crew-header h2 span {
+        color: var(--primary-container);
+      }
+
+      .crew-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+
+      @media (min-width: 600px) {
+        .crew-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .crew-card {
+        background-color: var(--surface-container-low);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-md);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .crew-card:hover {
+        border-color: var(--primary-container);
+        box-shadow: var(--shadow-red);
+        transform: translateY(-4px);
+      }
+
+      .crew-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--outline-variant),
+          var(--bg-color)
+        );
+        margin: 0 auto var(--spacing-sm) auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+      }
+
+      .crew-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .crew-name {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+        font-style: italic;
+        text-transform: uppercase;
+        margin-bottom: var(--spacing-xs);
+        color: var(--white);
+      }
+
+      .crew-role {
+        font-size: 13px;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .crew-desc {
+        font-size: 14px;
+        color: var(--on-surface-variant);
+        margin-bottom: var(--spacing-md);
+        line-height: 1.5;
+        min-height: 90px;
+      }
+
+      .crew-socials {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-sm);
+        list-style: none;
+      }
+
+      .crew-social-link {
+        width: 38px;
+        height: 38px;
+        border-radius: var(--radius-full);
+        background-color: var(--surface-container);
+        color: var(--on-bg-color);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .crew-social-link:hover {
+        background-color: var(--primary-container);
+        color: var(--white);
+        transform: scale(1.1);
+      }
+    </style>
+
+    <!-- Componentes e Lógica -->
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Barra de Navegação Componentizada -->
+    <header-navbar active="about"></header-navbar>
+
+    <!-- Área Principal de Conteúdo -->
+    <main>
+      <section class="container crew-section">
+        <div class="crew-header">
+          <h2>A <span>Equipe</span></h2>
+          <p style="color: var(--on-surface-variant)">
+            Conheça os desenvolvedores por trás deste projeto de fã da Fast
+            Saga.
+          </p>
+        </div>
+
+        <div class="crew-grid">
+          <!-- Desenvolvedor 1: Lucas Alt -->
+          <div class="crew-card">
+            <div class="crew-avatar">
+              <img
+                src="https://avatars.githubusercontent.com/u/56651735?v=4"
+                alt="Foto de perfil de Lucas Alt"
+              />
+            </div>
+            <h3 class="crew-name">Lucas Alt</h3>
+            <p class="crew-role">Estilos & Lógica</p>
+            <p class="crew-desc">
+              Responsável pelo desenvolvimento dos componentes web
+              reutilizáveis, gerenciamento de estados dinâmicos e otimização de
+              responsividade.
+            </p>
+            <ul class="crew-socials">
+              <li>
+                <a
+                  href="https://github.com/LucasAlt40"
+                  target="_blank"
+                  class="crew-social-link"
+                  title="GitHub"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >code</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/lucasalt40/"
+                  target="_blank"
+                  class="crew-social-link"
+                  title="LinkedIn"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >badge</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Desenvolvedor 2: Matheus Miasaki -->
+          <div class="crew-card">
+            <div class="crew-avatar">
+              <img
+                src="https://avatars.githubusercontent.com/u/124709765?v=4"
+                alt="Foto de perfil de Matheus Miasaki"
+              />
+            </div>
+            <h3 class="crew-name">Matheus Miasaki</h3>
+            <p class="crew-role">Design & Estrutura</p>
+            <p class="crew-desc">
+              Responsável pelo desenvolvimento da identidade visual, estrutura
+              semântica das páginas HTML e customização das variáveis CSS.
+            </p>
+            <ul class="crew-socials">
+              <li>
+                <a
+                  href="https://github.com/matheusmiasaki"
+                  target="_blank"
+                  class="crew-social-link"
+                  title="GitHub"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >code</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/matheusmiasaki/"
+                  target="_blank"
+                  class="crew-social-link"
+                  title="LinkedIn"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >badge</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé Componentizado -->
+    <footer-section></footer-section>
+  </body>
+</html>
