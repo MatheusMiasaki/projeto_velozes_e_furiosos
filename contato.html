@@ -1,186 +1,173 @@
 <!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>FAST SAGA - Contato</title>
+    <title>FAST SAGA - Contato</title>
 
-  <link rel="icon" type="image/png" href="img/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
-  <script src="js/components.js" defer></script>
-  <script src="js/main.js" defer></script>
-</head>
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
 
-<body>
+  <body>
+    <header-navbar active="contact"></header-navbar>
 
-  <header-navbar active="contact"></header-navbar>
+    <main class="contact-main">
+      <section class="container contact-section">
+        <header class="page-title">
+          <h1>FALE COM A <span>EQUIPE</span></h1>
 
-  <main class="contact-main">
+          <p>
+            Envie sua mensagem, sugestão ou opinião sobre o projeto FAST SAGA.
+            Este espaço foi criado para aproximar fãs, visitantes e
+            desenvolvedores.
+          </p>
+        </header>
 
-    <section class="container contact-section">
+        <section class="contact-layout">
+          <section class="contact-form-card">
+            <h2>ENVIE UMA MENSAGEM</h2>
 
-      <header class="page-title">
-        <h1>FALE COM A <span>EQUIPE</span></h1>
+            <form class="contact-form" action="#" method="post">
+              <fieldset>
+                <legend>Dados para contato</legend>
 
-        <p>
-          Envie sua mensagem, sugestão ou opinião sobre o projeto FAST SAGA.
-          Este espaço foi criado para aproximar fãs, visitantes e desenvolvedores.
-        </p>
-      </header>
+                <div class="form-group">
+                  <label for="nome">Seu nome</label>
 
-      <section class="contact-layout">
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                  />
+                </div>
 
-        <section class="contact-form-card">
+                <div class="form-group">
+                  <label for="email">Seu e-mail</label>
 
-          <h2>ENVIE UMA MENSAGEM</h2>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                  />
+                </div>
 
-          <form class="contact-form" action="#" method="post">
+                <div class="form-group">
+                  <label for="assunto">Assunto</label>
 
-            <fieldset>
+                  <input
+                    type="text"
+                    id="assunto"
+                    name="assunto"
+                    placeholder="Ex: Sugestão para o site"
+                    required
+                  />
+                </div>
 
-              <legend>Dados para contato</legend>
+                <div class="form-group">
+                  <label for="mensagem">Mensagem</label>
 
-              <div class="form-group">
-                <label for="nome">Seu nome</label>
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    placeholder="Escreva sua mensagem aqui..."
+                    required
+                  ></textarea>
+                </div>
+              </fieldset>
 
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  placeholder="Digite seu nome"
-                  required>
-              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar mensagem
+              </button>
+            </form>
+          </section>
 
-              <div class="form-group">
-                <label for="email">Seu e-mail</label>
+          <aside class="developers-card">
+            <h2>DESENVOLVEDORES</h2>
 
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Digite seu e-mail"
-                  required>
-              </div>
+            <article class="developer-box">
+              <figure class="developer-photo">
+                <img
+                  src="https://avatars.githubusercontent.com/u/56651735?v=4"
+                  alt="Foto de perfil de Lucas Alt"
+                />
+              </figure>
 
-              <div class="form-group">
-                <label for="assunto">Assunto</label>
+              <section>
+                <h3>Lucas Alt</h3>
 
-                <input
-                  type="text"
-                  id="assunto"
-                  name="assunto"
-                  placeholder="Ex: Sugestão para o site"
-                  required>
-              </div>
+                <address>
+                  <a href="tel:+5516996201245" class="contato">
+                    (16) 99620-1245
+                  </a>
 
-              <div class="form-group">
-                <label for="mensagem">Mensagem</label>
+                  <br />
 
-                <textarea
-                  id="mensagem"
-                  name="mensagem"
-                  placeholder="Escreva sua mensagem aqui..."
-                  required></textarea>
-              </div>
+                  <a
+                    href="mailto:lucas.theodoro@aluno.ifsp.edu.br"
+                    class="contato"
+                  >
+                    lucas.theodoro@aluno.ifsp.edu.br
+                  </a>
+                </address>
 
-            </fieldset>
+                <span> Desenvolvimento • Componentes • Responsividade </span>
+              </section>
+            </article>
 
-            <button type="submit" class="btn btn-primary">
-              Enviar mensagem
-            </button>
+            <article class="developer-box">
+              <figure class="developer-photo">
+                <img
+                  src="https://avatars.githubusercontent.com/u/124709765?v=4"
+                  alt="Foto de perfil de Matheus Miasaki"
+                />
+              </figure>
 
-          </form>
+              <section>
+                <h3>Matheus Miasaki</h3>
 
+                <address>
+                  <a href="tel:+5516996260306" class="contato">
+                    (16) 99626-0306
+                  </a>
+
+                  <br />
+
+                  <a
+                    href="mailto:matheus.miasaki@aluno.ifsp.edu.br"
+                    class="contato"
+                  >
+                    matheus.miasaki@aluno.ifsp.edu.br
+                  </a>
+                </address>
+
+                <span> Desenvolvimento • HTML • CSS </span>
+              </section>
+            </article>
+          </aside>
         </section>
-
-        <aside class="developers-card">
-
-          <h2>DESENVOLVEDORES</h2>
-
-          <article class="developer-box">
-
-            <figure class="developer-photo">
-              <img
-                src="https://avatars.githubusercontent.com/u/56651735?v=4"
-                alt="Foto de perfil de Lucas Alt">
-            </figure>
-
-            <section>
-
-              <h3>Lucas Alt</h3>
-
-              <address>
-
-                <a href="tel:+5516996201245" class="contato">
-                  (16) 99620-1245
-                </a>
-
-                <br>
-
-                <a href="mailto:lucas.mudar@aluno.ifsp.edu.br" class="contato">
-                  lucas.mudar@aluno.ifsp.edu.br
-                </a>
-
-              </address>
-
-              <span> 
-                Desenvolvimento • Componentes • Responsividade
-              </span>
-
-            </section>
-
-          </article>
-
-          <article class="developer-box">
-
-            <figure class="developer-photo">
-              <img
-                src="https://avatars.githubusercontent.com/u/124709765?v=4"
-                alt="Foto de perfil de Matheus Miasaki">
-            </figure>
-
-            <section>
-
-              <h3>Matheus Miasaki</h3>
-
-              <address>
-
-                <a href="tel:+5516996260306" class="contato">
-                  (16) 99626-0306
-                </a>
-
-                <br>
-
-                <a href="mailto:matheus.miasaki@aluno.ifsp.edu.br" class="contato">
-                  matheus.miasaki@aluno.ifsp.edu.br
-                </a>
-
-              </address>
-
-              <span>
-                Desenvolvimento • HTML • CSS
-              </span>
-
-            </section>
-
-          </article>
-
-        </aside>
-
       </section>
+    </main>
 
-    </section>
-
-  </main>
-
-  <footer-section></footer-section>
-
-</body>
+    <footer-section></footer-section>
+  </body>
 </html>

@@ -11,8 +11,7 @@ class FastSagaHeader extends HTMLElement {
     const isCharacterActive =
       activeAttr === "personagem" || pageName === "personagens.html";
 
-    const isFilmeActive =
-      activeAttr === "movies" || pageName === "filme.html";
+    const isFilmeActive = activeAttr === "movies" || pageName === "filme.html";
 
     const isCuriosidadesActive =
       activeAttr === "curiosities" || pageName === "curiosidades.html";
@@ -20,8 +19,7 @@ class FastSagaHeader extends HTMLElement {
     const isContatsActive =
       activeAttr === "contats" || pageName === "contato.html";
 
-    const isAboutActive =
-      activeAttr === "about" || pageName === "sobre.html";
+    const isAboutActive = activeAttr === "about" || pageName === "sobre.html";
 
     this.innerHTML = `
       <div class="container nav-wrapper">
@@ -99,7 +97,9 @@ class FastSagaHeader extends HTMLElement {
         if (menu.classList.contains("active") && !this.contains(e.target)) {
           menu.classList.remove("active");
 
-          const iconSpan = toggleBtn.querySelector(".material-symbols-outlined");
+          const iconSpan = toggleBtn.querySelector(
+            ".material-symbols-outlined",
+          );
 
           if (iconSpan) {
             iconSpan.textContent = "menu";
