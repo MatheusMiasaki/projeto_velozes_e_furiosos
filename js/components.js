@@ -9,71 +9,78 @@ class FastSagaHeader extends HTMLElement {
       activeAttr === "home" || pageName === "index.html" || pageName === "";
 
     const isCharacterActive =
-      activeAttr === "personagem" || pageName === "personagens.html";
+      activeAttr === "characters" || pageName === "personagens.html";
 
     const isFilmeActive = activeAttr === "movies" || pageName === "filme.html";
 
     const isCuriosidadesActive =
       activeAttr === "curiosities" || pageName === "curiosidades.html";
 
-    const isContatsActive =
-      activeAttr === "contats" || pageName === "contato.html";
+    const isContactActive =
+      activeAttr === "contact" || pageName === "contato.html";
 
     const isAboutActive = activeAttr === "about" || pageName === "sobre.html";
 
     this.innerHTML = `
-      <div class="container nav-wrapper">
+      <header class="container nav-wrapper">
         <!-- Logo -->
         <a href="index.html" class="nav-logo">
           FAST SAGA
         </a>
 
-        <!-- Menu de Navegação -->
-        <ul class="nav-menu">
-          <li>
-            <a href="index.html" class="nav-link ${isHomeActive ? "active" : ""}">
-              Home
-            </a>
-          </li>
+        <nav class="nav-content" aria-label="Menu principal">
+          <!-- Menu de Navegação -->
+          <ul class="nav-menu" id="main-menu">
+            <li>
+              <a href="index.html" class="nav-link ${isHomeActive ? "active" : ""}">
+                Home
+              </a>
+            </li>
 
-          <li>
-            <a href="filme.html" class="nav-link ${isFilmeActive ? "active" : ""}">
-              Filmes
-            </a>
-          </li>
+            <li>
+              <a href="filme.html" class="nav-link ${isFilmeActive ? "active" : ""}">
+                Filmes
+              </a>
+            </li>
 
-          <li>
-            <a href="personagens.html" class="nav-link ${isCharacterActive ? "active" : ""}">
-              Personagens
-            </a>
-          </li>
+            <li>
+              <a href="personagens.html" class="nav-link ${isCharacterActive ? "active" : ""}">
+                Personagens
+              </a>
+            </li>
 
-          <li>
-            <a href="curiosidades.html" class="nav-link ${isCuriosidadesActive ? "active" : ""}">
-              Curiosidades
-            </a>
-          </li>
+            <li>
+              <a href="curiosidades.html" class="nav-link ${isCuriosidadesActive ? "active" : ""}">
+                Curiosidades
+              </a>
+            </li>
 
-          <li>
-            <a href="contato.html" class="nav-link ${isContatsActive ? "active" : ""}">
-              Contato
-            </a>
-          </li>
+            <li>
+              <a href="contato.html" class="nav-link ${isContactActive ? "active" : ""}">
+                Contato
+              </a>
+            </li>
 
-          <li>
-            <a href="sobre.html" class="nav-link ${isAboutActive ? "active" : ""}">
-              Sobre
-            </a>
-          </li>
-        </ul>
+            <li>
+              <a href="sobre.html" class="nav-link ${isAboutActive ? "active" : ""}">
+                Sobre
+              </a>
+            </li>
+          </ul>
+        </nav>
 
         <!-- Ações do Menu -->
         <div class="nav-actions">
-          <button class="nav-toggle" aria-label="Alternar Menu de Navegação">
+          <button
+            class="nav-toggle"
+            aria-label="Alternar Menu de Navegação"
+            aria-controls="main-menu"
+            aria-expanded="false"
+          >
             <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
-      </div>
+      </header>
     `;
 
     const toggleBtn = this.querySelector(".nav-toggle");
@@ -91,6 +98,11 @@ class FastSagaHeader extends HTMLElement {
             ? "close"
             : "menu";
         }
+
+        toggleBtn.setAttribute(
+          "aria-expanded",
+          menu.classList.contains("active").toString(),
+        );
       });
 
       document.addEventListener("click", (e) => {
@@ -104,6 +116,8 @@ class FastSagaHeader extends HTMLElement {
           if (iconSpan) {
             iconSpan.textContent = "menu";
           }
+
+          toggleBtn.setAttribute("aria-expanded", "false");
         }
       });
     }
@@ -113,7 +127,7 @@ class FastSagaHeader extends HTMLElement {
 class FastSagaFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <div class="container footer-wrapper">
+      <footer class="container footer-wrapper">
         <span class="footer-logo">FAST SAGA</span>
 
         <span class="footer-copyright">
@@ -126,7 +140,7 @@ class FastSagaFooter extends HTMLElement {
           <li><a href="#" class="footer-link">Envio de Fãs</a></li>
           <li><a href="#" class="footer-link">Kit de Imprensa</a></li>
         </ul>
-      </div>
+      </footer>
     `;
   }
 }
